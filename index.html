@@ -2,663 +2,663 @@
 <html>
 
 <head>
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Global Styles */
-        * {
-            box-sizing: border-box;
-            color: rgb(24, 33, 83);
-            font-size: 20px;
-        }
+	<title>Portfolio</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<style>
+		/* Global Styles */
+		* {
+			box-sizing: border-box;
+			color: rgb(24, 33, 83);
+			font-size: 20px;
+		}
 
-        body {
-            font-family: normal normal normal 18px/1.4em avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
-            background-color: #f7f7f7;
-            margin: 0;
-        }
+		body {
+			font-family: normal normal normal 18px/1.4em avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
+			background-color: #f7f7f7;
+			margin: 0;
+		}
 
-        .container {
-            /* max-width: 960px; */
-            margin: 0 auto;
-            padding: 20px;
-        }
+		.container {
+			/* max-width: 960px; */
+			margin: 0 auto;
+			padding: 20px;
+		}
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            right: 0;
-            padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            text-align: end;
-            z-index: 1;
-        }
+		/* Navigation */
+		nav {
+			position: fixed;
+			top: 0;
+			right: 0;
+			padding: 20px;
+			background-color: #ffffff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			width: 100%;
+			text-align: end;
+			z-index: 1;
+		}
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+		nav ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
 
-        nav ul li {
-            display: inline-block;
-        }
+		nav ul li {
+			display: inline-block;
+		}
 
-        nav ul li a {
-            text-decoration: none;
-            /* color: #333333; */
-            padding: 10px 20px;
-            font-weight: bold;
-        }
-        
-        /* First section with animation and background image */
-        .background-image {
-            background-image: url('https://wallup.net/wp-content/uploads/2015/12/240884-architecture-skyscraper-landscape-urban-modern-sun_rays-building-glass-steel-blue.jpg');
-            background-size: cover;
-            background-position: center;
-            /*height: 500px;
+		nav ul li a {
+			text-decoration: none;
+			/* color: #333333; */
+			padding: 10px 20px;
+			font-weight: bold;
+		}
+
+		/* First section with animation and background image */
+		.background-image {
+			background-image: url('https://wallup.net/wp-content/uploads/2015/12/240884-architecture-skyscraper-landscape-urban-modern-sun_rays-building-glass-steel-blue.jpg');
+			background-size: cover;
+			background-position: center;
+			/*height: 500px;
             Adjust the height as needed */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-top: 8%;
-        }
-
-        .card-container {
-            display: flex;
-            justify-content: center;
-            /* align-items: flex-start; */
-            animation-name: slide-in;
-            animation-duration: 2s;
-        }
-
-        .card {
-            background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            /*padding: 20px;*/
-            text-align: left;
-            width: 45%;
-        }
-
-        .card img {
-            width: 100%;
-            height: auto;
-        }
-
-        @keyframes slide-in {
-            0% {
-                transform: translateX(-100%);
-            }
-
-            100% {
-                transform: translateX(0);
-            }
-        }
-
-        /* Second section with tag heading, icons, and description */
-        .tag-section {
-            background-color: #f1f1f1;
-            text-align: center;
-            padding: 40px;
-        }
-
-        .tag-section h2 {
-            margin-bottom: 20px;
-        }
-
-        .icon-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .icon-container i {
-            font-size: 24px;
-            color: #333333;
-            margin: 0 10px;
-        }
-
-        .animated-section {
-            opacity: 0;
-            transform: translateY(50px);
-            animation: slide-in 1s forwards;
-        }
-
-        @keyframes slide-in {
-            0% {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-
-        /* Third section with experience details */
-        .experience-section {
-            background-color: #ffffff;
-            text-align: center;
-            padding: 40px;
-            position: relative;
-            /* Add position relative for animation */
-        }
-
-        .experience-line {
-            display: flex;
-            align-items: center;
-            position: relative;
-            /* Add position relative for animation */
-        }
-
-        .experience-line::before,
-        .experience-line::after {
-            content: "";
-            flex: 1;
-            border-bottom: 1px solid #333333;
-            position: absolute;
-            /* Add position absolute for animation */
-            width: 0;
-            /* Initial width set to 0 */
-            transition: width 0.5s;
-            /* Add transition for smooth animation */
-        }
-
-        .experience-name {
-            flex: 1;
-            margin: 10px;
-        }
-
-        .experience-description {
-            flex: 1;
-            margin: 10px;
-            text-align: left;
-        }
-
-        /* Add animation by changing width on hover */
-        .experience-line:hover::before,
-        .experience-line:hover::after {
-            width: 50%;
-            /* Adjust width as per your preference */
-        }
-
-        /* Fourth section with projects */
-        .projects-section {
-            background-color: #f1f1f1;
-            padding: 40px;
-        }
-
-        .projects-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .project-box {
-            flex-basis: calc
-        }
-
-        .project-box {
-            flex-basis: calc(33.33% - 20px);
-            margin-bottom: 20px;
-        }
-
-        .project-image {
-            width: 100%;
-            height: auto;
-        }
-
-        /* Fifth section with education details */
-        .education-section {
-            background-color: #ffffff;
-            text-align: center;
-            padding: 40px;
-        }
-
-        .education-line {
-            display: flex;
-            align-items: center;
-        }
-
-        .education-line::before,
-        .education-line::after {
-            content: "";
-            flex: 1;
-            border-bottom: 1px solid #333333;
-        }
-
-        .education-name {
-            flex: 1;
-            margin: 10px;
-        }
-
-        .education-description {
-            flex: 1;
-            margin: 10px;
-            text-align: left;
-        }
-
-        /* Sixth section with expertise details */
-        .expertise-section {
-            background-color: #f1f1f1;
-            padding: 40px;
-        }
-
-        .expertise-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .expertise-box {
-            flex-basis: calc(33.33% - 20px);
-            margin-bottom: 20px;
-        }
-
-        /* Seventh section with skills */
-        .skills-section {
-            background-color: #ffffff;
-            padding: 40px;
-            text-align: center;
-        }
-
-        .skills-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .skills-box {
-            flex-basis: calc(33.33% - 20px);
-            margin-bottom: 20px;
-        }
-
-        .skills-box p {
-            background-color: #333333;
-            color: #ffffff;
-            padding: 10px;
-            margin: 0;
-        }
-
-        /* Eighth section with contact form */
-        .contact-section {
-            background-color: #f1f1f1;
-            padding: 40px;
-            text-align: center;
-        }
-
-        .contact-form {
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        .contact-form label {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-
-        .contact-form button {
-            padding: 10px 20px;
-            background-color: #333333;
-            color: #ffffff;
-            border: none;
-            cursor: pointer;
-        }
-
-        .contact-form button:hover {
-            background-color: #555555;
-        }
-
-        .align_left {
-            padding: 6%;
-        }
-
-        .head,
-        .tail {
-            color: rgb(24, 33, 83);
-            margin-block-start: 0em;
-        }
-
-        .head {
-            font-weight: bold;
-            margin-block-end: 0em;
-        }
-
-        .padding_top {
-            padding-top: 10%;
-        }
-
-        .grey_back {
-            background-color: lightgrey;
-        }
-
-        .navbar {
-            background-color: darkslateblue;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 60px;
-            width: 53%;
-            margin: auto;
-        }
-
-        .navbar a {
-            text-decoration: none;
-            color: #ffffff;
-            margin: 0 10px;
-            font-size: 24px;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .navbar a.hover {
-            opacity: 0;
-        }
-
-        .navbar a {
-            opacity: 1;
-        }
-
-        .text {
-            text-align: center;
-            width: 35%;
-            margin: auto;
-            padding-top: 5%;
-            padding-bottom: 5%;
-            line-height: 1.5;
-        }
-
-        .experience {
-            background-color: #ffffff;
-            display: flex;
-            align-items: flex-start;
-            text-align: center;
-        }
-
-        .experience .left {
-            width: 50%;
-            text-align: right;
-            padding-right: 2%;
-        }
-
-        .experience .left .title {
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .experience .left .date {
-            color: gray;
-        }
-
-        .experience .right {
-            width: 50%;
-            position: relative;
-            text-align: left;
-        }
-
-        .experience .right::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0%;
-            width: 1px;
-            background-color: #333333;
-            transform: translateX(-50%);
-        }
-
-        .experience .right .role {
-            margin-left: 20px;
-            width: 70%;
-            line-height: 1.5;
-        }
-
-        .center_text {
-            text-align: center;
-        }
-
-        .period {
-            text-align: center;
-            margin-block-start: 0em;
-            margin-block-end: 0em;
-            background-color: #ffffff;
-        }
-
-        .section.grey_back {
-            background-color: #f1f1f1;
-            padding: 20px;
-        }
-
-        .center_text {
-            text-align: center;
-        }
-
-        .contact-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
-        .contact-form {
-            flex: 1;
-        }
-
-        .contact-form label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 5px;
-            margin-bottom: 10px;
-        }
-
-        .contact-form button {
-            background-color: rgb(24, 33, 83);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-
-        .contact-links {
-            flex: 1;
-        }
-
-        .blue-link {
-            color: rgb(24, 33, 83);
-            text-decoration: none;
-        }
-
-        .blue-link:hover {
-            text-decoration: underline;
-        }
-
-        .contact-form button {
-            display: block;
-            margin: 0 auto;
-            background-color: rgb(24, 33, 83);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-
-        .back_white {
-            background-color: #ffffff;
-            padding-top: 2%;
-        }
-
-        .section.skills-section {
-            background-image: url('https://wallup.net/wp-content/uploads/2015/12/240884-architecture-skyscraper-landscape-urban-modern-sun_rays-building-glass-steel-blue.jpg');
-            background-size: cover;
-            padding: 40px;
-            font-family: avenir-lt-w01_85-heavy1475544, sans-serif;
-        }
-
-        .skills-heading {
-            background-color: rgb(24, 33, 83);
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
-
-        .skills-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-top: 40px;
-        }
-
-        .skill-column {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            flex-basis: 50%;
-        }
-
-        .skill-cell {
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 20px;
-            margin-bottom: 20px;
-            width: 50%;
-        }
-
-        .skill-cell:last-child {
-            margin-bottom: 0;
-        }
-
-        .section#expertise {
-            padding: 40px;
-        }
-
-        #expertise h2 {
-            text-align: center;
-        }
-
-        .expertise-content {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .expertise-item {
-            flex-basis: 30%;
-            margin-bottom: 20px;
-        }
-
-        .expertise-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .section#projects {
-            padding-top: 5%;
-            padding-bottom: 10%;
-        }
-
-        #projects h2 {
-            text-align: center;
-        }
-
-        .projects-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 40px;
-        }
-
-        .projects-content a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 10px;
-            /* Adjust the value to control the spacing between the images */
-            width: 200px;
-            /* Adjust the width as needed */
-            height: 200px;
-            /* Adjust the height as needed */
-            background-color: white;
-        }
-
-        .projects-content img {
-            max-width: 100%;
-            height: auto;
-            object-fit: contain;
-            display: block;
-        }
-
-        .section#recent {
-            padding: 40px;
-            background: #f1f1f1;
-        }
-
-        #recent h2 {
-            text-align: center;
-            color: #333;
-        }
-
-        .recent-work-content {
-            display: flex;
-            justify-content: center;
-            margin-top: 40px;
-        }
-
-        .project {
-            align-items: center;
-            background: #fff;
-            border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 100%;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-
-        .project img {
-            height: auto;
-            margin-right: 20px;
-            border-radius: 4px;
-            padding: 5%;
-        }
-
-        .project-description {
-            color: #333;
-            font-size: medium !important;
-        }
-
-        .project-description p:last-child {
-            margin-bottom: 0;
-        }
-    </style>
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding-top: 8%;
+		}
+
+		.card-container {
+			display: flex;
+			justify-content: center;
+			/* align-items: flex-start; */
+			animation-name: slide-in;
+			animation-duration: 2s;
+		}
+
+		.card {
+			background-color: #ffffff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			/*padding: 20px;*/
+			text-align: left;
+			width: 45%;
+		}
+
+		.card img {
+			width: 100%;
+			height: auto;
+		}
+
+		@keyframes slide-in {
+			0% {
+				transform: translateX(-100%);
+			}
+
+			100% {
+				transform: translateX(0);
+			}
+		}
+
+		/* Second section with tag heading, icons, and description */
+		.tag-section {
+			background-color: #f1f1f1;
+			text-align: center;
+			padding: 40px;
+		}
+
+		.tag-section h2 {
+			margin-bottom: 20px;
+		}
+
+		.icon-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 20px;
+		}
+
+		.icon-container i {
+			font-size: 24px;
+			color: #333333;
+			margin: 0 10px;
+		}
+
+		.animated-section {
+			opacity: 0;
+			transform: translateY(50px);
+			animation: slide-in 1s forwards;
+		}
+
+		@keyframes slide-in {
+			0% {
+				opacity: 0;
+				transform: translateY(50px);
+			}
+
+			100% {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+
+		/* Third section with experience details */
+		.experience-section {
+			background-color: #ffffff;
+			text-align: center;
+			padding: 40px;
+			position: relative;
+			/* Add position relative for animation */
+		}
+
+		.experience-line {
+			display: flex;
+			align-items: center;
+			position: relative;
+			/* Add position relative for animation */
+		}
+
+		.experience-line::before,
+		.experience-line::after {
+			content: "";
+			flex: 1;
+			border-bottom: 1px solid #333333;
+			position: absolute;
+			/* Add position absolute for animation */
+			width: 0;
+			/* Initial width set to 0 */
+			transition: width 0.5s;
+			/* Add transition for smooth animation */
+		}
+
+		.experience-name {
+			flex: 1;
+			margin: 10px;
+		}
+
+		.experience-description {
+			flex: 1;
+			margin: 10px;
+			text-align: left;
+		}
+
+		/* Add animation by changing width on hover */
+		.experience-line:hover::before,
+		.experience-line:hover::after {
+			width: 50%;
+			/* Adjust width as per your preference */
+		}
+
+		/* Fourth section with projects */
+		.projects-section {
+			background-color: #f1f1f1;
+			padding: 40px;
+		}
+
+		.projects-container {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			margin-top: 20px;
+		}
+
+		.project-box {
+			flex-basis: calc
+		}
+
+		.project-box {
+			flex-basis: calc(33.33% - 20px);
+			margin-bottom: 20px;
+		}
+
+		.project-image {
+			width: 100%;
+			height: auto;
+		}
+
+		/* Fifth section with education details */
+		.education-section {
+			background-color: #ffffff;
+			text-align: center;
+			padding: 40px;
+		}
+
+		.education-line {
+			display: flex;
+			align-items: center;
+		}
+
+		.education-line::before,
+		.education-line::after {
+			content: "";
+			flex: 1;
+			border-bottom: 1px solid #333333;
+		}
+
+		.education-name {
+			flex: 1;
+			margin: 10px;
+		}
+
+		.education-description {
+			flex: 1;
+			margin: 10px;
+			text-align: left;
+		}
+
+		/* Sixth section with expertise details */
+		.expertise-section {
+			background-color: #f1f1f1;
+			padding: 40px;
+		}
+
+		.expertise-container {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			margin-top: 20px;
+		}
+
+		.expertise-box {
+			flex-basis: calc(33.33% - 20px);
+			margin-bottom: 20px;
+		}
+
+		/* Seventh section with skills */
+		.skills-section {
+			background-color: #ffffff;
+			padding: 40px;
+			text-align: center;
+		}
+
+		.skills-container {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			margin-top: 20px;
+		}
+
+		.skills-box {
+			flex-basis: calc(33.33% - 20px);
+			margin-bottom: 20px;
+		}
+
+		.skills-box p {
+			background-color: #333333;
+			color: #ffffff;
+			padding: 10px;
+			margin: 0;
+		}
+
+		/* Eighth section with contact form */
+		.contact-section {
+			background-color: #f1f1f1;
+			padding: 40px;
+			text-align: center;
+		}
+
+		.contact-form {
+			max-width: 400px;
+			margin: 0 auto;
+		}
+
+		.contact-form label {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		.contact-form input,
+		.contact-form textarea {
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 20px;
+		}
+
+		.contact-form button {
+			padding: 10px 20px;
+			background-color: #333333;
+			color: #ffffff;
+			border: none;
+			cursor: pointer;
+		}
+
+		.contact-form button:hover {
+			background-color: #555555;
+		}
+
+		.align_left {
+			padding: 6%;
+		}
+
+		.head,
+		.tail {
+			color: rgb(24, 33, 83);
+			margin-block-start: 0em;
+		}
+
+		.head {
+			font-weight: bold;
+			margin-block-end: 0em;
+		}
+
+		.padding_top {
+			padding-top: 10%;
+		}
+
+		.grey_back {
+			background-color: lightgrey;
+		}
+
+		.navbar {
+			background-color: darkslateblue;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 60px;
+			width: 53%;
+			margin: auto;
+		}
+
+		.navbar a {
+			text-decoration: none;
+			color: #ffffff;
+			margin: 0 10px;
+			font-size: 24px;
+			opacity: 0;
+			transition: opacity 0.5s ease;
+		}
+
+		.navbar a.hover {
+			opacity: 0;
+		}
+
+		.navbar a {
+			opacity: 1;
+		}
+
+		.text {
+			text-align: center;
+			width: 35%;
+			margin: auto;
+			padding-top: 5%;
+			padding-bottom: 5%;
+			line-height: 1.5;
+		}
+
+		.experience {
+			background-color: #ffffff;
+			display: flex;
+			align-items: flex-start;
+			text-align: center;
+		}
+
+		.experience .left {
+			width: 50%;
+			text-align: right;
+			padding-right: 2%;
+		}
+
+		.experience .left .title {
+			font-weight: bold;
+			font-size: 18px;
+		}
+
+		.experience .left .date {
+			color: gray;
+		}
+
+		.experience .right {
+			width: 50%;
+			position: relative;
+			text-align: left;
+		}
+
+		.experience .right::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0%;
+			width: 1px;
+			background-color: #333333;
+			transform: translateX(-50%);
+		}
+
+		.experience .right .role {
+			margin-left: 20px;
+			width: 70%;
+			line-height: 1.5;
+		}
+
+		.center_text {
+			text-align: center;
+		}
+
+		.period {
+			text-align: center;
+			margin-block-start: 0em;
+			margin-block-end: 0em;
+			background-color: #ffffff;
+		}
+
+		.section.grey_back {
+			background-color: #f1f1f1;
+			padding: 20px;
+		}
+
+		.center_text {
+			text-align: center;
+		}
+
+		.contact-content {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+
+		.contact-form {
+			flex: 1;
+		}
+
+		.contact-form label {
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		.contact-form input,
+		.contact-form textarea {
+			width: 100%;
+			padding: 5px;
+			margin-bottom: 10px;
+		}
+
+		.contact-form button {
+			background-color: rgb(24, 33, 83);
+			color: white;
+			border: none;
+			padding: 10px 20px;
+			cursor: pointer;
+		}
+
+		.contact-links {
+			flex: 1;
+		}
+
+		.blue-link {
+			color: rgb(24, 33, 83);
+			text-decoration: none;
+		}
+
+		.blue-link:hover {
+			text-decoration: underline;
+		}
+
+		.contact-form button {
+			display: block;
+			margin: 0 auto;
+			background-color: rgb(24, 33, 83);
+			color: white;
+			border: none;
+			padding: 10px 20px;
+			cursor: pointer;
+		}
+
+		.back_white {
+			background-color: #ffffff;
+			padding-top: 2%;
+		}
+
+		.section.skills-section {
+			background-image: url('https://wallup.net/wp-content/uploads/2015/12/240884-architecture-skyscraper-landscape-urban-modern-sun_rays-building-glass-steel-blue.jpg');
+			background-size: cover;
+			padding: 40px;
+			font-family: avenir-lt-w01_85-heavy1475544, sans-serif;
+		}
+
+		.skills-heading {
+			background-color: rgb(24, 33, 83);
+			padding: 20px;
+			text-align: center;
+			color: white;
+		}
+
+		.skills-content {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin-top: 40px;
+		}
+
+		.skill-column {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			flex-basis: 50%;
+		}
+
+		.skill-cell {
+			background-color: rgba(255, 255, 255, 0.7);
+			padding: 20px;
+			margin-bottom: 20px;
+			width: 50%;
+		}
+
+		.skill-cell:last-child {
+			margin-bottom: 0;
+		}
+
+		.section#expertise {
+			padding: 40px;
+		}
+
+		#expertise h2 {
+			text-align: center;
+		}
+
+		.expertise-content {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 40px;
+			flex-wrap: wrap;
+		}
+
+		.expertise-item {
+			flex-basis: 30%;
+			margin-bottom: 20px;
+		}
+
+		.expertise-item:last-child {
+			margin-bottom: 0;
+		}
+
+		.section#projects {
+			padding-top: 5%;
+			padding-bottom: 10%;
+		}
+
+		#projects h2 {
+			text-align: center;
+		}
+
+		.projects-content {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 40px;
+		}
+
+		.projects-content a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0 10px;
+			/* Adjust the value to control the spacing between the images */
+			width: 200px;
+			/* Adjust the width as needed */
+			height: 200px;
+			/* Adjust the height as needed */
+			background-color: white;
+		}
+
+		.projects-content img {
+			max-width: 100%;
+			height: auto;
+			object-fit: contain;
+			display: block;
+		}
+
+		.section#recent {
+			padding: 40px;
+			background: #f1f1f1;
+		}
+
+		#recent h2 {
+			text-align: center;
+			color: #333;
+		}
+
+		.recent-work-content {
+			display: flex;
+			justify-content: center;
+			margin-top: 40px;
+		}
+
+		.project {
+			align-items: center;
+			background: #fff;
+			border-radius: 6px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			padding: 20px;
+			width: 100%;
+			margin-bottom: 30px;
+			text-align: center;
+		}
+
+
+		.project img {
+			height: auto;
+			margin-right: 20px;
+			border-radius: 4px;
+			padding: 5%;
+		}
+
+		.project-description {
+			color: #333;
+			font-size: medium !important;
+		}
+
+		.project-description p:last-child {
+			margin-bottom: 0;
+		}
+	</style>
 </head>
 
 
 <body>
-    <div class="container">
+	<div class="container">
 
-        <!-- Nav bar to navigate to different sections -->
-        <div>
+		<!-- Nav bar to navigate to different sections -->
+		<div>
 
 			<script>
 				const menuItems = [
@@ -691,10 +691,10 @@
 						'link': '#contact'
 					}
 				];
-			
+
 				const nav = document.createElement('nav');
 				const ul = document.createElement('ul');
-			
+
 				menuItems.forEach(item => {
 					const li = document.createElement('li');
 					const a = document.createElement('a');
@@ -703,125 +703,162 @@
 					li.appendChild(a);
 					ul.appendChild(li);
 				});
-			
+
 				nav.appendChild(ul);
 				document.body.appendChild(nav);
 			</script>
-			
 
 
-        </div>
+
+		</div>
 
 
-        <!-- section 1 with basic user information -->
-        <div class="section background-image">
-            <div class="card-container ">
-                <div class="card">
-                    <img src="https://drive.google.com/uc?id=1EjiKXzOD4NtoBph3DvEGyEAWZO-TabnB" alt="Your Image" width="200px">
-                </div>
-                <div class="card align_left">
+		<!-- section 1 with basic user information -->
+		<div class="section background-image">
+			<div class="card-container ">
+				<div class="card">
+					<img src="https://drive.google.com/uc?id=1EjiKXzOD4NtoBph3DvEGyEAWZO-TabnB" alt="Your Image"
+						width="200px">
+				</div>
+				<div class="card align_left">
 
-                    <h2>Gowthami Duggineni</h2>
-                    <h1>SOFTWARE ENGINEER</h3>
+					<h2>Gowthami Duggineni</h2>
+					<h1>SOFTWARE ENGINEER</h3>
 
-                        <p class="head padding_top">Phone:</p>
+						<p class="head padding_top">Phone:</p>
 
-                        <p class="tail">404-940-6627</p>
+						<p class="tail">404-940-6627</p>
 
-                        <p class="head padding_top">Email:</p>
+						<p class="head padding_top">Email:</p>
 
-                        <p class="tail">dugginenigowthami@gmail.com</p>
+						<p class="tail">dugginenigowthami@gmail.com</p>
 
-                        <p class="head padding_top">Address:</p>
+						<p class="head padding_top">Address:</p>
 
-                        <p class="tail">486 Lindbergh PL NE, Atlanta, GA</p>
-                </div>
-            </div>
-        </div>
+						<p class="tail">486 Lindbergh PL NE, Atlanta, GA</p>
+				</div>
+			</div>
+		</div>
 
-        <!-- section 1 with link to github and linkedIn -->
-        <div class="section grey_back animated-section">
-            <div class="navbar">
-                <a href="https://www.linkedin.com/in/gowthami-duggineni/"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Gowthamiiiii?tab=repositories"><i class="fab fa-github"></i></a>
-            </div>
+		<!-- section 1 with link to github and linkedIn -->
+		<div class="section grey_back animated-section">
+			<div class="navbar">
+				<a href="https://www.linkedin.com/in/gowthami-duggineni/"><i class="fab fa-linkedin"></i></a>
+				<a href="https://github.com/Gowthamiiiii?tab=repositories"><i class="fab fa-github"></i></a>
+			</div>
 
-            <!-- basic intro -->
-            <div class="text">
-                <h2>Hello! I am Gowthami</h2>
-
-
-                <p>Experienced full-stack web developer with expertise in JavaScript frameworks (Angular, React, Vue)
-                    and a proven track record of delivering complex projects.
-                    Skilled in API creation and integration (GraphQL, Spring MVC)
-                    and adept at problem-solving and root cause analysis.
-                    Passionate about innovative solutions and eager to contribute to
-                    future projects.
-                <p>
-            </div>
-        </div>
-
-        <!-- section 2 with experience -->
-
-        <div class="section back_white" id="experience">
-            <h2 class="center_text">Experience</h2>
-            <p class="period">&bull;</p>
-
-            <?php
-            // Define an array of experiences
-            $experiences = [
-                [
-                    "date" => "2022 - Present",
-                    "title" => "Graduate Research Assistant",
-                    "head" => "Georgia State University",
-                    "description" => "Collaborated with the University Health Department to design and implement a solution using Raspberry Pi Pico for quantifying the grip strength of hand rehabilitation patients. Developed a web application utilizing JavaScript, Python, and GraphQL to manage pressure data collected from sensors, which allowed for an effective evaluation of the patients’ grip strength during rehabilitation. Delivered cross-browser compatible UIs and performed data analysis and visualization to evaluate system performance. Received appreciation for best research idea in the field of computer science, [2022]. Supervised a team of REU - 2022 students for their research on the Internet of Things."
-                ],
-                [
-                    "date" => "2019 - 2022",
-                    "title" => "Application Developer",
-                    "head" => "Tata Consultancy Services",
-                    "description" => "Designed and developed appealing user interfaces for clients such as ADM Prime and Tata Motors using Angular 9, JavaScript, and implemented Orders Management Systems microservices with REST API. Developed and integrated personalized vehicle selection and pricing features into the Tata Motors Application, resulting in a streamlined and transparent purchasing process for customers. Achieved Application Security using HTTP encryption, regular vulnerability assessments, and input validation that ensures safety in payment processing. Deployed AEM for content management, leveraging HTL, LESS, and jQuery to meet business requirements, and employed Git within a large team to ensure efficient project management. Actively engaged with the QA team that resulted in timely delivery of high-quality software products. Conducted code reviews and created reusable Angular components with binding to boost team productivity by 70%. Awarded TCS GEMS for Resolving Critical Issues and Problem Solving, [2020]."
-                ],
-                [
-                    "date" => "2018 - 2019",
-                    "title" => "Software Engineer Intern",
-                    "head" => "Indian Space Research Organization",
-                    "description" => "Developed a data portal (Liquid Propellant Storage and Supply System Facility) using React and Spring for managing liquid propellants usage in rockets and satellites.
-
-                    Processed XML data generated from the portal using XQuery, Python, and Beautiful Soup, and stored thousands of records into a NoSQL database (MongoDB).
-                    
-                    Integrated the Spring framework to enable efficient access to data from the NoSQL database and built the front-end of the portal using React, React Bootstrap, and React Routing, resulting in a seamless user experience.
-                    
-                    Mentored a team in XML data extraction techniques, resulting in a significant improvement in efficiency and a reduction in paperwork by 60%."
-                ]
-            ];
-
-            // Iterate over experiences and generate HTML for each
-            foreach ($experiences as $experience) {
-                echo '<div class="experience">';
-                echo '<div class="left">';
-                echo '<div class="date">' . $experience['date'] . '</div>';
-                echo '<div class="title">' . $experience['title'] . '</div>';
-                echo '</div>';
-                echo '<div class="right">';
-                echo '<div class="role">';
-                echo '<p class="head">' . $experience['head'] . '</p>';
-                echo '<p>' . $experience['description'] . '</p>';
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
-                echo '<p class="period">&bull;</p>';
-            }
-            ?>
-        </div>
+			<!-- basic intro -->
+			<div class="text">
+				<h2>Hello! I am Gowthami</h2>
 
 
-        <!-- project section -->
+				<p>Experienced full-stack web developer with expertise in JavaScript frameworks (Angular, React, Vue)
+					and a proven track record of delivering complex projects.
+					Skilled in API creation and integration (GraphQL, Spring MVC)
+					and adept at problem-solving and root cause analysis.
+					Passionate about innovative solutions and eager to contribute to
+					future projects.
+				<p>
+			</div>
+		</div>
 
-        <div class="section" id="projects">
-            <h2 class="center_text">PROJECTS</h2>
-            <div class="projects-content">
-                <?php
+		<!-- section 2 with experience -->
+
+		<div class="section back_white" id="experience">
+			<h2 class="center_text">Experience</h2>
+			<p class="period">&bull;</p>
+			<script>
+				const experiences = [
+					{
+						"date": "2022 - Present",
+						"title": "Graduate Research Assistant",
+						"head": "Georgia State University",
+						"description": "Collaborated with the University Health Department to design and implement a solution using Raspberry Pi Pico for quantifying the grip strength of hand rehabilitation patients. Developed a web application utilizing JavaScript, Python, and GraphQL to manage pressure data collected from sensors, which allowed for an effective evaluation of the patients’ grip strength during rehabilitation. Delivered cross-browser compatible UIs and performed data analysis and visualization to evaluate system performance. Received appreciation for best research idea in the field of computer science, [2022]. Supervised a team of REU - 2022 students for their research on the Internet of Things."
+					},
+					{
+						"date": "2019 - 2022",
+						"title": "Application Developer",
+						"head": "Tata Consultancy Services",
+						"description": "Designed and developed appealing user interfaces for clients such as ADM Prime and Tata Motors using Angular 9, JavaScript, and implemented Orders Management Systems microservices with REST API. Developed and integrated personalized vehicle selection and pricing features into the Tata Motors Application, resulting in a streamlined and transparent purchasing process for customers. Achieved Application Security using HTTP encryption, regular vulnerability assessments, and input validation that ensures safety in payment processing. Deployed AEM for content management, leveraging HTL, LESS, and jQuery to meet business requirements, and employed Git within a large team to ensure efficient project management. Actively engaged with the QA team that resulted in timely delivery of high-quality software products. Conducted code reviews and created reusable Angular components with binding to boost team productivity by 70%. Awarded TCS GEMS for Resolving Critical Issues and Problem Solving, [2020]."
+					},
+					{
+						"date": "2018 - 2019",
+						"title": "Software Engineer Intern",
+						"head": "Indian Space Research Organization",
+						"description": "Developed a data portal (Liquid Propellant Storage and Supply System Facility) using React and Spring for managing liquid propellants usage in rockets and satellites.\n\nProcessed XML data generated from the portal using XQuery, Python, and Beautiful Soup, and stored thousands of records into a NoSQL database (MongoDB).\n\nIntegrated the Spring framework to enable efficient access to data from the NoSQL database and built the front-end of the portal using React, React Bootstrap, and React Routing, resulting in a seamless user experience.\n\nMentored a team in XML data extraction techniques, resulting in a significant improvement in efficiency and a reduction in paperwork by 60%."
+					}
+				];
+
+				const experienceDiv = document.createElement('div');
+				experienceDiv.classList.add('section', 'back_white');
+
+				const h2 = document.createElement('h2');
+				h2.classList.add('center_text');
+				h2.textContent = 'Experience';
+				experienceDiv.appendChild(h2);
+
+				const periodP = document.createElement('p');
+				periodP.classList.add('period');
+				periodP.textContent = '\u2022';
+				experienceDiv.appendChild(periodP);
+
+				experiences.forEach(experience => {
+					const experienceDivInner = document.createElement('div');
+					experienceDivInner.classList.add('experience');
+
+					const leftDiv = document.createElement('div');
+					leftDiv.classList.add('left');
+
+					const dateDiv = document.createElement('div');
+					dateDiv.classList.add('date');
+					dateDiv.textContent = experience.date;
+					leftDiv.appendChild(dateDiv);
+
+					const titleDiv = document.createElement('div');
+					titleDiv.classList.add('title');
+					titleDiv.textContent = experience.title;
+					leftDiv.appendChild(titleDiv);
+
+					experienceDivInner.appendChild(leftDiv);
+
+					const rightDiv = document.createElement('div');
+					rightDiv.classList.add('right');
+
+					const roleDiv = document.createElement('div');
+					roleDiv.classList.add('role');
+
+					const headP = document.createElement('p');
+					headP.classList.add('head');
+					headP.textContent = experience.head;
+					roleDiv.appendChild(headP);
+
+					const descriptionP = document.createElement('p');
+					descriptionP.textContent = experience.description;
+					roleDiv.appendChild(descriptionP);
+
+					rightDiv.appendChild(roleDiv);
+					experienceDivInner.appendChild(rightDiv);
+
+					experienceDiv.appendChild(experienceDivInner);
+				});
+
+				const periodP2 = document.createElement('p');
+				periodP2.classList.add('period');
+				periodP2.textContent = '\u2022';
+				experienceDiv.appendChild(periodP2);
+
+				document.body.appendChild(experienceDiv);
+			</script>
+		</div>
+
+
+
+		<!-- project section -->
+
+		<div class="section" id="projects">
+			<h2 class="center_text">PROJECTS</h2>
+			<div class="projects-content">
+				<?php
                 // Define an array of projects
                 $projects = [
                     [
@@ -853,17 +890,17 @@
                     echo '</a>';
                 }
                 ?>
-            </div>
-        </div>
+			</div>
+		</div>
 
 
-        <!-- Recent Work -->
+		<!-- Recent Work -->
 
-        <div class="section" id="recent">
-            <h2 class="center_text">RECENT WORK</h2>
-            <div class="recent-work-content">
-                <div class="project">
-                    <?php
+		<div class="section" id="recent">
+			<h2 class="center_text">RECENT WORK</h2>
+			<div class="recent-work-content">
+				<div class="project">
+					<?php
                     // Define the project details
                     $project = [
                         "image" => "https://drive.google.com/uc?id=1ncguK2IR-URw00JqWFIDkn1BeYhF1hlI",
@@ -885,19 +922,19 @@
                     }
                     echo '</div>';
                     ?>
-                </div>
-            </div>
-        </div>
+				</div>
+			</div>
+		</div>
 
 
 
-        <!-- education section same structure as experience -->
+		<!-- education section same structure as experience -->
 
-        <div class="section back_white" id="education">
-            <h2 class="center_text">Education</h2>
-            <p class="period">&bull;</p>
+		<div class="section back_white" id="education">
+			<h2 class="center_text">Education</h2>
+			<p class="period">&bull;</p>
 
-            <?php
+			<?php
             // Define the education details
             $education = [
                 [
@@ -937,18 +974,18 @@
                 echo '<p class="period">&bull;</p>';
             }
             ?>
-        </div>
+		</div>
 
 
-        <!-- Skills are mentioned here -->
+		<!-- Skills are mentioned here -->
 
-        <div class="section skills-section" id="skills">
-            <div class="skills-heading">
-                <h2 class="center_text" style="color: white;">SKILLS</h2>
-            </div>
-            <div class="skills-content">
-                <div class="skill-column">
-                    <?php
+		<div class="section skills-section" id="skills">
+			<div class="skills-heading">
+				<h2 class="center_text" style="color: white;">SKILLS</h2>
+			</div>
+			<div class="skills-content">
+				<div class="skill-column">
+					<?php
                     // Define the skills
                     $skills = [
                         [
@@ -972,9 +1009,9 @@
                         echo '</div>';
                     }
                     ?>
-                </div>
-                <div class="skill-column">
-                    <?php
+				</div>
+				<div class="skill-column">
+					<?php
                     // Define additional skills
                     $additionalSkills = [
                         "Version Control and Project Management" => ["Git", "Azure DevOps", "Docker", "Jira"],
@@ -989,17 +1026,17 @@
                         echo '</div>';
                     }
                     ?>
-                </div>
-            </div>
-        </div>
+				</div>
+			</div>
+		</div>
 
 
 
-        <!-- Expertise (good at) are mentioned here -->
-        <div class="section" id="expertise">
-            <h2 class="center_text">EXPERTISE</h2>
-            <div class="expertise-content">
-                <?php
+		<!-- Expertise (good at) are mentioned here -->
+		<div class="section" id="expertise">
+			<h2 class="center_text">EXPERTISE</h2>
+			<div class="expertise-content">
+				<?php
                 // Define the expertise items
                 $expertiseItems = [
                     [
@@ -1024,34 +1061,34 @@
                     echo '</div>';
                 }
                 ?>
-            </div>
-        </div>
+			</div>
+		</div>
 
-    </div>
+	</div>
 
-    <!-- contact section with a form -->
-    <div class="section grey_back" id="contact">
-        <div class="section grey_back" id="contact">
-            <h2 class="center_text">Contact</h2>
-            <div class="contact-content">
-                <form class="contact-form" method="post" name="emailContact">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message"></textarea>
-                    <button type="submit" name="send" value="submit">Submit</button>
-                </form>
-            </div>
-        </div>
+	<!-- contact section with a form -->
+	<div class="section grey_back" id="contact">
+		<div class="section grey_back" id="contact">
+			<h2 class="center_text">Contact</h2>
+			<div class="contact-content">
+				<form class="contact-form" method="post" name="emailContact">
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="name">
+					<label for="email">Email:</label>
+					<input type="email" id="email" name="email">
+					<label for="message">Message:</label>
+					<textarea id="message" name="message"></textarea>
+					<button type="submit" name="send" value="submit">Submit</button>
+				</form>
+			</div>
+		</div>
 
-    </div>
+	</div>
 
-    ?>
+	?>
 
 
-    </div>
+	</div>
 
 </body>
 
