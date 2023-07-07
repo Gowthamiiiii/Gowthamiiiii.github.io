@@ -660,47 +660,54 @@
         <!-- Nav bar to navigate to different sections -->
         <div>
 
-
-            <?php
-            $menuItems = array(
-                array(
-                    'text' => 'Experience',
-                    'link' => '#experience'
-                ),
-                array(
-                    'text' => 'Projects',
-                    'link' => '#projects'
-                ),
-                array(
-                    'text' => 'Recent work',
-                    'link' => '#recent'
-                ),
-                array(
-                    'text' => 'Education',
-                    'link' => '#education'
-                ),
-                array(
-                    'text' => 'Skills',
-                    'link' => '#skills'
-                ),
-                array(
-                    'text' => 'Expertise',
-                    'link' => '#expertise'
-                ),
-                array(
-                    'text' => 'Contact',
-                    'link' => '#contact'
-                )
-            );
-            ?>
-
-            <nav>
-                <ul>
-                    <?php foreach ($menuItems as $item) { ?>
-                        <li><a href="<?php echo $item['link']; ?>"><?php echo $item['text']; ?></a></li>
-                    <?php } ?>
-                </ul>
-            </nav>
+			<script>
+				const menuItems = [
+					{
+						'text': 'Experience',
+						'link': '#experience'
+					},
+					{
+						'text': 'Projects',
+						'link': '#projects'
+					},
+					{
+						'text': 'Recent work',
+						'link': '#recent'
+					},
+					{
+						'text': 'Education',
+						'link': '#education'
+					},
+					{
+						'text': 'Skills',
+						'link': '#skills'
+					},
+					{
+						'text': 'Expertise',
+						'link': '#expertise'
+					},
+					{
+						'text': 'Contact',
+						'link': '#contact'
+					}
+				];
+			
+				const nav = document.createElement('nav');
+				const ul = document.createElement('ul');
+			
+				menuItems.forEach(item => {
+					const li = document.createElement('li');
+					const a = document.createElement('a');
+					a.href = item.link;
+					a.textContent = item.text;
+					li.appendChild(a);
+					ul.appendChild(li);
+				});
+			
+				nav.appendChild(ul);
+				document.body.appendChild(nav);
+			</script>
+			
 
 
         </div>
