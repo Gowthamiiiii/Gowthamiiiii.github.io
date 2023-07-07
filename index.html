@@ -765,8 +765,6 @@
 		<!-- section 2 with experience -->
 
 		<div class="section back_white" id="experience">
-			<h2 class="center_text">Experience</h2>
-			<p class="period">&bull;</p>
 			<script>
 				const experiences = [
 					{
@@ -847,9 +845,11 @@
 				periodP2.textContent = '\u2022';
 				experienceDiv.appendChild(periodP2);
 
-				document.body.appendChild(experienceDiv);
+				const parentElement = document.getElementById('experience');
+				parentElement.parentNode.insertBefore(experienceDiv, parentElement.nextSibling);
 			</script>
 		</div>
+
 
 
 
@@ -858,38 +858,47 @@
 		<div class="section" id="projects">
 			<h2 class="center_text">PROJECTS</h2>
 			<div class="projects-content">
-				<?php
-                // Define an array of projects
-                $projects = [
-                    [
-                        "url" => "https://github.com/Gowthamiiiii/Shopping_App",
-                        "image" => "https://i5.walmartimages.com/asr/3c0c23e9-30e8-4ded-b77a-46bda7612afb.f3b56b7276821af08c099e9802769005.jpeg?odnWidth=1000&odnHeight=1000&odnBg=ffffff",
-                        "alt" => "Project 1"
-                    ],
-                    [
-                        "url" => "https://github.com/Gowthamiiiii/CameraApp",
-                        "image" => "https://s3.amazonaws.com/kajabi-storefronts-production/blogs/2110/images/8dZewRiQeWUwvO3oUuPm_mandalay-bay-retail-resort-shops-shopping-bags.jpg",
-                        "alt" => "Project 2"
-                    ],
-                    [
-                        "url" => "https://github.com/Gowthamiiiii/React-LeaderBoard-App",
-                        "image" => "https://th.bing.com/th/id/OIP.C28Jhvka6s2NzQVp2_8uAwHaFF?pid=ImgDet&rs=1",
-                        "alt" => "Project 3"
-                    ],
-                    [
-                        "url" => "https://github.com/Gowthamiiiii/GripStrength",
-                        "image" => "https://taupotennis.org.nz/wp-content/uploads/2021/01/4.png",
-                        "alt" => "Project 4"
-                    ]
-                ];
+				<script>
+					const projects = [
+						{
+							"url": "https://github.com/Gowthamiiiii/Shopping_App",
+							"image": "https://i5.walmartimages.com/asr/3c0c23e9-30e8-4ded-b77a-46bda7612afb.f3b56b7276821af08c099e9802769005.jpeg?odnWidth=1000&odnHeight=1000&odnBg=ffffff",
+							"alt": "Project 1"
+						},
+						{
+							"url": "https://github.com/Gowthamiiiii/CameraApp",
+							"image": "https://s3.amazonaws.com/kajabi-storefronts-production/blogs/2110/images/8dZewRiQeWUwvO3oUuPm_mandalay-bay-retail-resort-shops-shopping-bags.jpg",
+							"alt": "Project 2"
+						},
+						{
+							"url": "https://github.com/Gowthamiiiii/React-LeaderBoard-App",
+							"image": "https://th.bing.com/th/id/OIP.C28Jhvka6s2NzQVp2_8uAwHaFF?pid=ImgDet&rs=1",
+							"alt": "Project 3"
+						},
+						{
+							"url": "https://github.com/Gowthamiiiii/GripStrength",
+							"image": "https://taupotennis.org.nz/wp-content/uploads/2021/01/4.png",
+							"alt": "Project 4"
+						}
+					];
 
-                // Iterate over projects and generate HTML for each
-                foreach ($projects as $project) {
-                    echo '<a href="' . $project['url'] . '">';
-                    echo '<img src="' . $project['image'] . '" alt="' . $project['alt'] . '">';
-                    echo '</a>';
-                }
-                ?>
+					const projectsContent = document.createElement('div');
+					projectsContent.classList.add('projects-content');
+
+					projects.forEach(project => {
+						const link = document.createElement('a');
+						link.href = project.url;
+
+						const image = document.createElement('img');
+						image.src = project.image;
+						image.alt = project.alt;
+
+						link.appendChild(image);
+						projectsContent.appendChild(link);
+					});
+
+					document.getElementById('projects').appendChild(projectsContent);
+				</script>
 			</div>
 		</div>
 
@@ -899,82 +908,140 @@
 		<div class="section" id="recent">
 			<h2 class="center_text">RECENT WORK</h2>
 			<div class="recent-work-content">
-				<div class="project">
-					<?php
-                    // Define the project details
-                    $project = [
-                        "image" => "https://drive.google.com/uc?id=1ncguK2IR-URw00JqWFIDkn1BeYhF1hlI",
-                        "title" => "In-Home Hand Rehabilitation Project",
-                        "description" => [
-                            "This project involved developing a software solution for patients undergoing in-home hand rehabilitation activities. The main objective was to quantify the grip strength of the patients.",
-                            "The motivation behind the project was to monitor the patients daily activities and track any improvements in their grip strength over time.",
-                            "As the sole developer, I started by researching existing works and brainstorming feasible solutions. Initially, I explored designing a sensor as part of my IoT research, but later discovered the FSR (Force-Sensing Resistor) sensor that perfectly suited our requirements. I came up with the idea of using the FSR sensor to measure the pressure applied by the patient, which would be mapped against the brightness of an LED (V = IR equation). The FSR sensor's resistance decreases with increasing pressure, resulting in higher current flow and brightness.",
-                            "I designed an end-to-end application using JavaScript to capture and record the pressure and brightness values from the input. The backend image processing handled the mapping of pressure and brightness with epoch time. The data was stored in a database, from which I fetched the required information. The application provided two logins: one for the practitioner and another for the patient. The practitioner had access to monitor data and check if a patient's strength was below the threshold, while the patient could view their historical data displayed in a graph for comparison. GraphQL was used for performing mutations and queries on the database. Data visualization and analysis were performed on the patient data for display in the frontend."
-                        ]
-                    ];
+				<script>
+					const project = {
+						"image": "https://drive.google.com/uc?id=1ncguK2IR-URw00JqWFIDkn1BeYhF1hlI",
+						"title": "In-Home Hand Rehabilitation Project",
+						"description": [
+							"This project involved developing a software solution for patients undergoing in-home hand rehabilitation activities. The main objective was to quantify the grip strength of the patients.",
+							"The motivation behind the project was to monitor the patients daily activities and track any improvements in their grip strength over time.",
+							"As the sole developer, I started by researching existing works and brainstorming feasible solutions. Initially, I explored designing a sensor as part of my IoT research, but later discovered the FSR (Force-Sensing Resistor) sensor that perfectly suited our requirements. I came up with the idea of using the FSR sensor to measure the pressure applied by the patient, which would be mapped against the brightness of an LED (V = IR equation). The FSR sensor's resistance decreases with increasing pressure, resulting in higher current flow and brightness.",
+							"I designed an end-to-end application using JavaScript to capture and record the pressure and brightness values from the input. The backend image processing handled the mapping of pressure and brightness with epoch time. The data was stored in a database, from which I fetched the required information. The application provided two logins: one for the practitioner and another for the patient. The practitioner had access to monitor data and check if a patient's strength was below the threshold, while the patient could view their historical data displayed in a graph for comparison. GraphQL was used for performing mutations and queries on the database. Data visualization and analysis were performed on the patient data for display in the frontend."
+						]
+					};
 
-                    // Generate HTML for the project
-                    echo '<img src="' . $project['image'] . '" alt="Project Image">';
-                    echo '<div class="project-description">';
-                    echo '<h3>' . $project['title'] . '</h3>';
-                    foreach ($project['description'] as $paragraph) {
-                        echo '<p>' . $paragraph . '</p>';
-                    }
-                    echo '</div>';
-                    ?>
-				</div>
+					const recentWorkContent = document.createElement('div');
+					recentWorkContent.classList.add('recent-work-content');
+
+					const projectDiv = document.createElement('div');
+					projectDiv.classList.add('project');
+
+					const image = document.createElement('img');
+					image.src = project.image;
+					image.alt = 'Project Image';
+					projectDiv.appendChild(image);
+
+					const projectDescription = document.createElement('div');
+					projectDescription.classList.add('project-description');
+
+					const title = document.createElement('h3');
+					title.textContent = project.title;
+					projectDescription.appendChild(title);
+
+					project.description.forEach(paragraph => {
+						const p = document.createElement('p');
+						p.textContent = paragraph;
+						projectDescription.appendChild(p);
+					});
+
+					projectDiv.appendChild(projectDescription);
+					recentWorkContent.appendChild(projectDiv);
+
+					document.getElementById('recent').appendChild(recentWorkContent);
+				</script>
 			</div>
 		</div>
+
 
 
 
 		<!-- education section same structure as experience -->
 
 		<div class="section back_white" id="education">
-			<h2 class="center_text">Education</h2>
-			<p class="period">&bull;</p>
+			<script>
+				const education = [
+					{
+						"date": "2022 - 2023",
+						"title": "Master's Degree",
+						"institution": "Georgia State University",
+						"description": [
+							"As a Master's student in Computer Science at Georgia State University, I've honed my technical skills, collaborated on diverse projects, and gained valuable industry insights, shaping me into a proficient software engineer."
+						]
+					},
+					{
+						"date": "2015 - 2019",
+						"title": "Bachelor's Degree",
+						"institution": "Acharya Nagarjuna University",
+						"description": [
+							"I earned my Bachelor of Technology in Information Technology at R.V.R & J.C College of Engineering, Guntur. This foundational experience allowed me to develop strong technical skills and fostered my passion for software development and problem-solving."
+						]
+					}
+				];
 
-			<?php
-            // Define the education details
-            $education = [
-                [
-                    "date" => "
-                    2022 - 2023",
-                    "title" => "Master's Degree",
-                    "institution" => "Georgia State University",
-                    "description" => [
-                        "As a Master's student in Computer Science at Georgia State University, I've honed my technical skills, collaborated on diverse projects, and gained valuable industry insights, shaping me into a proficient software engineer."
-                    ]
-                ], [
-                    "date" => "2015 - 2019",
-                    "title" => "Bachelor's Degree",
-                    "institution" => "Acharya Nagarjuna University",
-                    "description" => [
-                        "I earned my Bachelor of Technology in Information Technology at R.V.R & J.C College of Engineering, Guntur. This foundational experience allowed me to develop strong technical skills and fostered my passion for software development and problem-solving."
-                    ]
-                ]
-            ];
+				const educationSection = document.createElement('div');
+				educationSection.classList.add('section', 'back_white');
 
-            // Generate HTML for each education entry
-            foreach ($education as $entry) {
-                echo '<div class="experience">';
-                echo '<div class="left">';
-                echo '<div class="date">' . $entry['date'] . '</div>';
-                echo '<div class="title">' . $entry['title'] . '</div>';
-                echo '</div>';
-                echo '<div class="right">';
-                echo '<div class="role">';
-                echo '<p class="head">' . $entry['institution'] . '</p>';
-                foreach ($entry['description'] as $paragraph) {
-                    echo '<p>' . $paragraph . '</p>';
-                }
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
-                echo '<p class="period">&bull;</p>';
-            }
-            ?>
+				const h2 = document.createElement('h2');
+				h2.classList.add('center_text');
+				h2.textContent = 'Education';
+				educationSection.appendChild(h2);
+
+				const periodP = document.createElement('p');
+				periodP.classList.add('period');
+				periodP.textContent = '\u2022';
+				educationSection.appendChild(periodP);
+
+				education.forEach(entry => {
+					const experienceDiv = document.createElement('div');
+					experienceDiv.classList.add('experience');
+
+					const leftDiv = document.createElement('div');
+					leftDiv.classList.add('left');
+
+					const dateDiv = document.createElement('div');
+					dateDiv.classList.add('date');
+					dateDiv.textContent = entry.date;
+					leftDiv.appendChild(dateDiv);
+
+					const titleDiv = document.createElement('div');
+					titleDiv.classList.add('title');
+					titleDiv.textContent = entry.title;
+					leftDiv.appendChild(titleDiv);
+
+					experienceDiv.appendChild(leftDiv);
+
+					const rightDiv = document.createElement('div');
+					rightDiv.classList.add('right');
+
+					const roleDiv = document.createElement('div');
+					roleDiv.classList.add('role');
+
+					const headP = document.createElement('p');
+					headP.classList.add('head');
+					headP.textContent = entry.institution;
+					roleDiv.appendChild(headP);
+
+					entry.description.forEach(paragraph => {
+						const p = document.createElement('p');
+						p.textContent = paragraph;
+						roleDiv.appendChild(p);
+					});
+
+					rightDiv.appendChild(roleDiv);
+					experienceDiv.appendChild(rightDiv);
+
+					educationSection.appendChild(experienceDiv);
+				});
+
+				const periodP2 = document.createElement('p');
+				periodP2.classList.add('period');
+				periodP2.textContent = '\u2022';
+				educationSection.appendChild(periodP2);
+
+				document.getElementById('education').appendChild(educationSection);
+			</script>
 		</div>
+
 
 
 		<!-- Skills are mentioned here -->
@@ -985,50 +1052,56 @@
 			</div>
 			<div class="skills-content">
 				<div class="skill-column">
-					<?php
-                    // Define the skills
-                    $skills = [
-                        [
-                            "title" => "Programming Languages",
-                            "items" => ["Python", "Java", "C"]
-                        ],
-                        [
-                            "title" => "Web Technologies",
-                            "items" => ["JavaScript", "Angular", "React", "Vue", "jQuery", "TypeScript", "PHP", "AEM"]
-                        ],
-                        [
-                            "title" => "Frameworks and Libraries",
-                            "items" => ["GraphQL", "Spring MVC"]
-                        ]
-                    ];
+					<script>
+						const skills = [
+							{
+								"title": "Programming Languages",
+								"items": ["Python", "Java", "C"]
+							},
+							{
+								"title": "Web Technologies",
+								"items": ["JavaScript", "Angular", "React", "Vue", "jQuery", "TypeScript", "PHP", "AEM"]
+							},
+							{
+								"title": "Frameworks and Libraries",
+								"items": ["GraphQL", "Spring MVC"]
+							}
+						];
 
-                    // Generate HTML for each skill category
-                    foreach ($skills as $skillCategory) {
-                        echo '<div class="skill-cell">';
-                        echo '<p>' . $skillCategory['title'] . ': ' . implode(', ', $skillCategory['items']) . '</p>';
-                        echo '</div>';
-                    }
-                    ?>
+						skills.forEach(skillCategory => {
+							const skillCell = document.createElement('div');
+							skillCell.classList.add('skill-cell');
+							const p = document.createElement('p');
+							p.textContent = `${skillCategory.title}: ${skillCategory.items.join(', ')}`;
+							skillCell.appendChild(p);
+							document.querySelector('.skill-column:first-child').appendChild(skillCell);
+						});
+					</script>
 				</div>
 				<div class="skill-column">
-					<?php
-                    // Define additional skills
-                    $additionalSkills = [
-                        "Version Control and Project Management" => ["Git", "Azure DevOps", "Docker", "Jira"],
-                        "Databases" => ["Spark", "MySQL", "MongoDB", "Oracle"],
-                        "Data Analysis and Computer Vision" => ["Pandas", "Matplotlib", "Computer Vision", "Raspberry Pi", "Image Processing"]
-                    ];
+					<script>
+						const additionalSkills = {
+							"Version Control and Project Management": ["Git", "Azure DevOps", "Docker", "Jira"],
+							"Databases": ["Spark", "MySQL", "MongoDB", "Oracle"],
+							"Data Analysis and Computer Vision": ["Pandas", "Matplotlib", "Computer Vision", "Raspberry Pi", "Image Processing"]
+						};
 
-                    // Generate HTML for additional skills
-                    foreach ($additionalSkills as $category => $skills) {
-                        echo '<div class="skill-cell">';
-                        echo '<p>' . $category . ': ' . implode(', ', $skills) . '</p>';
-                        echo '</div>';
-                    }
-                    ?>
+						for (const category in additionalSkills) {
+							const skills = additionalSkills[category];
+							const skillCell = document.createElement('div');
+							skillCell.classList.add('skill-cell');
+							const p = document.createElement('p');
+							p.textContent = `${category}: ${skills.join(', ')}`;
+							skillCell.appendChild(p);
+							document.querySelector('.skill-column:last-child').appendChild(skillCell);
+						}
+					</script>
 				</div>
 			</div>
 		</div>
+
+
+
 
 
 
@@ -1036,33 +1109,45 @@
 		<div class="section" id="expertise">
 			<h2 class="center_text">EXPERTISE</h2>
 			<div class="expertise-content">
-				<?php
-                // Define the expertise items
-                $expertiseItems = [
-                    [
-                        "title" => "Full-Stack Development",
-                        "description" => "Experienced in developing web applications using a variety of technologies and frameworks."
-                    ],
-                    [
-                        "title" => "Software Engineering",
-                        "description" => "Proficient in software engineering principles and practices, including design patterns, testing, debugging, and version control."
-                    ],
-                    [
-                        "title" => "Problem Solving",
-                        "description" => "Effective at analyzing complex technical problems and developing creative solutions."
-                    ]
-                ];
+				<script>
+					const expertiseItems = [
+						{
+							"title": "Full-Stack Development",
+							"description": "Experienced in developing web applications using a variety of technologies and frameworks."
+						},
+						{
+							"title": "Software Engineering",
+							"description": "Proficient in software engineering principles and practices, including design patterns, testing, debugging, and version control."
+						},
+						{
+							"title": "Problem Solving",
+							"description": "Effective at analyzing complex technical problems and developing creative solutions."
+						}
+					];
 
-                // Generate HTML for each expertise item
-                foreach ($expertiseItems as $item) {
-                    echo '<div class="expertise-item">';
-                    echo '<h3>' . $item['title'] . '</h3>';
-                    echo '<p>' . $item['description'] . '</p>';
-                    echo '</div>';
-                }
-                ?>
+					const expertiseContent = document.createElement('div');
+					expertiseContent.classList.add('expertise-content');
+
+					expertiseItems.forEach(item => {
+						const expertiseItem = document.createElement('div');
+						expertiseItem.classList.add('expertise-item');
+
+						const h3 = document.createElement('h3');
+						h3.textContent = item.title;
+						expertiseItem.appendChild(h3);
+
+						const p = document.createElement('p');
+						p.textContent = item.description;
+						expertiseItem.appendChild(p);
+
+						expertiseContent.appendChild(expertiseItem);
+					});
+
+					document.getElementById('expertise').appendChild(expertiseContent);
+				</script>
 			</div>
 		</div>
+
 
 	</div>
 
