@@ -1046,6 +1046,92 @@
 
 		<!-- Skills are mentioned here -->
 
+		<div class="section back_white" id="education">
+			<script>
+				const educationData = [
+					{
+						"date": "2022 - 2023",
+						"title": "Master's Degree",
+						"institution": "Georgia State University",
+						"description": [
+							"As a Master's student in Computer Science at Georgia State University, I've honed my technical skills, collaborated on diverse projects, and gained valuable industry insights, shaping me into a proficient software engineer."
+						]
+					},
+					{
+						"date": "2015 - 2019",
+						"title": "Bachelor's Degree",
+						"institution": "Acharya Nagarjuna University",
+						"description": [
+							"I earned my Bachelor of Technology in Information Technology at R.V.R & J.C College of Engineering, Guntur. This foundational experience allowed me to develop strong technical skills and fostered my passion for software development and problem-solving."
+						]
+					}
+				];
+
+				const educationSectionDiv = document.createElement('div');
+				educationSectionDiv.classList.add('section', 'back_white');
+
+				const h2Element = document.createElement('h2');
+				h2Element.classList.add('center_text');
+				h2Element.textContent = 'Education';
+				educationSectionDiv.appendChild(h2Element);
+
+				const periodPElement = document.createElement('p');
+				periodPElement.classList.add('period');
+				periodPElement.textContent = '\u2022';
+				educationSectionDiv.appendChild(periodPElement);
+
+				educationData.forEach(entry => {
+					const experienceDiv = document.createElement('div');
+					experienceDiv.classList.add('experience');
+
+					const leftDiv = document.createElement('div');
+					leftDiv.classList.add('left');
+
+					const dateDiv = document.createElement('div');
+					dateDiv.classList.add('date');
+					dateDiv.textContent = entry.date;
+					leftDiv.appendChild(dateDiv);
+
+					const titleDiv = document.createElement('div');
+					titleDiv.classList.add('title');
+					titleDiv.textContent = entry.title;
+					leftDiv.appendChild(titleDiv);
+
+					experienceDiv.appendChild(leftDiv);
+
+					const rightDiv = document.createElement('div');
+					rightDiv.classList.add('right');
+
+					const roleDiv = document.createElement('div');
+					roleDiv.classList.add('role');
+
+					const headP = document.createElement('p');
+					headP.classList.add('head');
+					headP.textContent = entry.institution;
+					roleDiv.appendChild(headP);
+
+					entry.description.forEach(paragraph => {
+						const p = document.createElement('p');
+						p.textContent = paragraph;
+						roleDiv.appendChild(p);
+					});
+
+					rightDiv.appendChild(roleDiv);
+					experienceDiv.appendChild(rightDiv);
+
+					educationSectionDiv.appendChild(experienceDiv);
+				});
+
+				const periodPElement2 = document.createElement('p');
+				periodPElement2.classList.add('period');
+				periodPElement2.textContent = '\u2022';
+				educationSectionDiv.appendChild(periodPElement2);
+
+				document.getElementById('education').appendChild(educationSectionDiv);
+			</script>
+		</div>
+
+
 		<div class="section skills-section" id="skills">
 			<div class="skills-heading">
 				<h2 class="center_text" style="color: white;">SKILLS</h2>
@@ -1099,9 +1185,6 @@
 				</div>
 			</div>
 		</div>
-
-
-
 
 
 
