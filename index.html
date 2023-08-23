@@ -18,10 +18,35 @@
 			margin: 0;
 		}
 
+		.project-cards {
+			display: flex;
+			justify-content: space-between; /* Distribute cards evenly */
+			flex-wrap: wrap; /* Wrap cards to the next line if needed */
+		}
+	
+		.project-card {
+			margin-bottom: 20px;
+			border: 1px solid #ccc;
+			padding: 10px;
+			box-sizing: border-box;
+			text-align: center;
+		}
+	
+		.project-card img {
+			max-width: 100%;
+			height: auto;
+			display: block; 
+        	margin: 0 auto;
+		}
+
 		.container {
 			/* max-width: 960px; */
 			margin: 0 auto;
 			padding: 20px;
+		}
+
+		.project-card {
+			background-color: white;
 		}
 
 		/* Navigation */
@@ -50,7 +75,7 @@
 		nav ul li a {
 			text-decoration: none;
 			/* color: #333333; */
-			padding: 10px 20px;
+			padding: 0px 15px;
 			font-weight: bold;
 		}
 
@@ -591,16 +616,15 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			margin: 0 10px;
-			/* Adjust the value to control the spacing between the images */
-			width: 200px;
-			/* Adjust the width as needed */
+			margin: 14px 13px;
+			width: 346px;
 			height: 200px;
 			/* Adjust the height as needed */
 			background-color: white;
 		}
 
 		.projects-content img {
+			width: 190px;
 			max-width: 100%;
 			height: auto;
 			object-fit: contain;
@@ -771,19 +795,39 @@
 						"date": "2022 - Present",
 						"title": "Graduate Research Assistant",
 						"head": "Georgia State University",
-						"description": "Collaborated with University health department to build an React web application using React Hooks for monitoring patient health, incorporating an auth service for access control and data protection. Built a patient health trend retrieval feature using Spring framework, optimizing querying performance and minimizing data overfetching, resulting in a significant improvement in application efficiency and user experience. Shaped and engineered a CI/CD pipeline in Azure DevOps, utilizing YAML Script for automated testing, building, and daily product releases. This fine-tuned the execution process and ensured a consistent environment. Attained 95% application accuracy by employing polyfills and progressive enhancement techniques, effectively reducing inconsistency in layout and formatting issues across multiple browsers. Received appreciation for best research idea in field of computer science, [2022]."
+						"description": " Collaborated with University health department to build an Angular 13 web application using RxJS Libraries and Promises for monitoring patient health. Incorporated an auth service for access control and data protection.\n\
+Built a patient health trend retrieval feature using GraphQL, optimizing querying performance and minimizing data overfetching. Resulted in a significant improvement in application efficiency and user experience.\n\
+Shaped and engineered a CI/CD pipeline, utilizing YAML Script for automated testing, building, and daily product releases. This fine-tuned the execution process and ensured a consistent environment.\n\
+Attained 95% application accuracy by employing polyfills and progressive enhancement techniques, effectively reducing inconsistency in layout and formatting issues across multiple browsers.\n\
+Received appreciation for best research idea in the field of computer science, [2022]."
 					},
 					{
 						"date": "2019 - 2022",
 						"title": "Application Developer",
 						"head": "Tata Consultancy Services",
-						"description": "Designed and developed appealing user interfaces for clients such as ADM Prime and Tata Motors using JavaScript, Angular 9 and implemented Orders Management Systems microservice with REST API. Integrated personalized vehicle selection and pricing features into the Tata Motors Application, resulting in a streamlined and transparent purchasing process for customers and a significant increase in profit by 75%. Achieved Application Security using HTTP encryption, regular vulnerability assessments and input validation that ensures safety in payment processing. Deployed AEM for content management, utilizing HTL, LESS, and jQuery to meet business requirements. Doubled product sales by identifying individual customer interests through personalized content authoring. Actively engaged with QA team, used Jasmine and Karma that resulted in delivery of high-quality software. Conducted code reviews and deployed reusable Angular components with binding to boost team productivity by 70%."
+						"description": "Designed and developed appealing user interfaces for clients such as ADM Prime and Tata Motors using JavaScript,\n\
+						Angular 9 and implemented Orders Management Systems microservice with REST API.\n\
+						Integrated personalized vehicle selection and pricing features into the Tata Motors Application, resulting in a streamlined\n\
+						and transparent purchasing process for customers and a significant increase in profit by 75%.\n\
+						Achieved Application Security using HTTP encryption, regular vulnerability assessments and input validation that\n\
+						ensures safety in payment processing.\n\
+						Deployed AEM for content management, utilizing HTL, LESS, and jQuery to meet business requirements. Doubled\n\
+						product sales by identifying individual customer interests through personalized content authoring.\n\
+						Actively engaged with QA team, used Jasmine and Karma that resulted in delivery of high-quality software.\n\
+						Conducted code reviews and deployed reusable components with binding to boost team productivity by 70%.\n\
+						"
 					},
 					{
 						"date": "2018 - 2019",
 						"title": "Software Engineer Intern",
 						"head": "Indian Space Research Organization",
-						"description": "Created a data portal with React, Java, and Spring for liquid propellant usage management in rockets and satellites and Processed Portal XML data using generator functions, that lowered 20% average process time. Utilized React Hooks and React Routing to improve code reusability, optimizing the design and in efficient data rendering and an impressive 80% increase in application performance. Resolved bugs with strict adherence to Service Level Agreement (S.L.A) and improved efficiency by 85%. Employed batch insertion techniques, reducing MongoDB’s average data load time from 5 hours to just 1 hour, and addressed performance issues by utilizing MongoDB profiler"
+						"description": "Created a data portal with ReactJS, Java, and Spring for liquid propellant usage management in rockets and satellites\n\
+						and Processed Portal XML data using generator functions, that lowered 20% average process time.\n\
+						Utilized React Hooks and React Routing to improve code reusability, optimizing the design and in efficient data\n\
+						rendering and an impressive 80% increase in application performance.\n\
+						Resolved bugs with strict adherence to Service Level Agreement (S.L.A) and improved efficiency by 85%.\n\
+						Employed batch insertion techniques, reducing MongoDB’s average data load time from 5 hours to just 1 hour, and\n\
+						addressed performance issues by utilizing MongoDB profiler"
 					}
 				];
 
@@ -858,59 +902,72 @@
 		<div class="section" id="projects">
 			<h2 class="center_text">PROJECTS</h2>
 			<div class="projects-content">
-				<script>
-					const projects = [
-						{
-							"url": "https://github.com/Gowthamiiiii/GripStrength ",
-							"image": "https://i5.walmartimages.com/asr/3c0c23e9-30e8-4ded-b77a-46bda7612afb.f3b56b7276821af08c099e9802769005.jpeg?odnWidth=1000&odnHeight=1000&odnBg=ffffff",
-							"alt": "Grip Strength Measurement"
-						},
-						{
-							"url": "https://github.com/Gowthamiiiii/Shopping_App",
-							"image": "https://s3.amazonaws.com/kajabi-storefronts-production/blogs/2110/images/8dZewRiQeWUwvO3oUuPm_mandalay-bay-retail-resort-shops-shopping-bags.jpg",
-							"alt": "let's Stop and Shop"
-						},
-						{
-							"url": "https://github.com/Gowthamiiiii/CameraApp",
-							"image": "https://th.bing.com/th/id/OIP.C28Jhvka6s2NzQVp2_8uAwHaFF?pid=ImgDet&rs=1",
-							"alt": "Video surveillance System"
-						},
-						{
-							"url": "https://github.com/Gowthamiiiii/React-LeaderBoard-App",
-							"image": "https://taupotennis.org.nz/wp-content/uploads/2021/01/4.png",
-							"alt": "Leader Board"
-						},
-						{
-							"url": "https://github.com/Gowthamiiiii/Weather",
-							"image": "https://th.bing.com/th/id/R.954295933d49026192be125aff99810b?rik=DtWE9YtdtPXffQ&pid=ImgRaw&r=0",
-							"alt": "Weather Data Analysis"
-						},
-						{
-							"url": "https://github.com/orgs/WildFireSimulationTeamSIMSlab/teams/frontend",
-							"image": "https://thumbs.dreamstime.com/b/fire-isolated-white-background-14143222.jpg",
-							"alt": "Wild Fire"
-						}
-					];
+				<div class="project-cards">
+					<script>
+						const projects = [
+							{
+								"title": "Grip Strength Measurement",
+								"url": "https://github.com/Gowthamiiiii/GripStrength",
+								"image": "https://i5.walmartimages.com/asr/3c0c23e9-30e8-4ded-b77a-46bda7612afb.f3b56b7276821af08c099e9802769005.jpeg?odnWidth=1000&odnHeight=1000&odnBg=ffffff"
+							},
+							{
+								"title": "let's Stop and Shop",
+								"url": "https://github.com/Gowthamiiiii/Shopping_App",
+								"image": "https://s3.amazonaws.com/kajabi-storefronts-production/blogs/2110/images/8dZewRiQeWUwvO3oUuPm_mandalay-bay-retail-resort-shops-shopping-bags.jpg"
+							},
+							{
+								"url": "https://github.com/Gowthamiiiii/CameraApp",
+								"image": "https://th.bing.com/th/id/OIP.C28Jhvka6s2NzQVp2_8uAwHaFF?pid=ImgDet&rs=1",
+								"title": "Video surveillance System"
+							},
+							{
+								"url": "https://github.com/Gowthamiiiii/React-LeaderBoard-App",
+								"image": "https://taupotennis.org.nz/wp-content/uploads/2021/01/4.png",
+								"title": "Leader Board"
+							},
+							{
+								"url": "https://github.com/Gowthamiiiii/Weather",
+								"image": "https://th.bing.com/th/id/R.954295933d49026192be125aff99810b?rik=DtWE9YtdtPXffQ&pid=ImgRaw&r=0",
+								"title": "Weather Data Analysis"
+							},
+							{
+								"url": "https://github.com/orgs/WildFireSimulationTeamSIMSlab/teams/frontend",
+								"image": "https://thumbs.dreamstime.com/b/fire-isolated-white-background-14143222.jpg",
+								"title": "Wild Fire"
+							}
+						];
 
-					const projectsContent = document.createElement('div');
-					projectsContent.classList.add('projects-content');
+						const projectCards = document.createElement('div');
+						projectCards.classList.add('project-cards');
 
-					projects.forEach(project => {
-						const link = document.createElement('a');
-						link.href = project.url;
+						projects.forEach(project => {
+							const card = document.createElement('div');
+							card.classList.add('project-card');
 
-						const image = document.createElement('img');
-						image.src = project.image;
-						image.alt = project.alt;
+							const title = document.createElement('h3');
+							title.textContent = project.title;
 
-						link.appendChild(image);
-						projectsContent.appendChild(link);
-					});
+							const link = document.createElement('a');
+							link.href = project.url;
 
-					document.getElementById('projects').appendChild(projectsContent);
-				</script>
+							const image = document.createElement('img');
+							image.src = project.image;
+							image.alt = project.title;
+
+							link.appendChild(image);
+							card.appendChild(link);
+							card.appendChild(title);
+
+							projectCards.appendChild(card);
+						});
+
+						document.querySelector('.projects-content').appendChild(projectCards);
+					</script>
+				</div>
 			</div>
 		</div>
+
+
 
 
 		<!-- Recent Work
@@ -970,23 +1027,20 @@
 		<div class="section back_white" id="education">
 			<script>
 
-				function resolve_promises(promises)
-				{
+				function resolve_promises(promises) {
 					const counter_promises = 0;
 					const output = [];
 					return new promise((resolve, reject) => {
 						promises.forEach((promise, i) => {
-							promise.then((value) =>
-								{
-									output[i] = value;
-									counter_promises += 1;
-									if(counter_promises == promises.length)
-									{
-										resolve(output);
-									}
+							promise.then((value) => {
+								output[i] = value;
+								counter_promises += 1;
+								if (counter_promises == promises.length) {
+									resolve(output);
 								}
+							}
 							)
-							.catch(reject);
+								.catch(reject);
 						})
 					})
 				}
